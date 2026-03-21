@@ -1,0 +1,117 @@
+{
+  "simulation_config": {
+    "nom": "Simulateur de Zoo",
+    "budget_initial": 80000,
+    "devise": "EUR",
+    "duree_tour_mois": 1,
+    "saison_haute": ["Mai", "Juin", "Juillet", "Août", "Septembre"]
+  },
+  "economie": {
+    "tarifs_entree": {
+      "adulte": 17,
+      "enfant": 13,
+      "groupe_standard_composition": { "adultes": 2, "enfants": 2 }
+    },
+    "cout_nourriture": {
+      "viande_kg": 5.0,
+      "graines_kg": 2.5
+    }
+  },
+  "especes": [
+    {
+      "nom": "Tigre",
+      "type_aliment": "viande",
+      "consommation_journaliere_kg": 12,
+      "esperance_vie_mois": 300,
+      "maturite_sexuelle_mois": 48,
+      "cycle_reproduction": {
+        "duree_gestation_mois": 3,
+        "portee_max": 3,
+        "frequence_reproduction_mois": 20
+      },
+      "economie": {
+        "achat_adulte": 120000,
+        "revente_adulte": 60000,
+        "subvention_annuelle": 43800,
+        "attractivite_haute_saison": 30,
+        "attractivite_basse_saison": 15
+      },
+      "sante": {
+        "probabilite_maladie_annuelle": 0.30,
+        "malus_mortalite_maladie": 0.10
+      }
+    },
+    {
+      "nom": "Aigle",
+      "type_aliment": "viande",
+      "consommation_journaliere_kg": 0.25,
+      "esperance_vie_mois": 168,
+      "maturite_sexuelle_mois": 48,
+      "cycle_reproduction": {
+        "duree_incubation_mois": 1.5,
+        "portee_max": 2,
+        "frequence_reproduction_mois": 12
+      },
+      "economie": {
+        "achat_adulte": 4000,
+        "revente_adulte": 2000,
+        "subvention_annuelle": 2190,
+        "attractivite_haute_saison": 15,
+        "attractivite_basse_saison": 7
+      },
+      "sante": {
+        "probabilite_maladie_annuelle": 0.10,
+        "malus_mortalite_maladie": 0.05
+      }
+    },
+    {
+      "nom": "Volaille",
+      "sous_types": ["Poule", "Coq"],
+      "type_aliment": "graines",
+      "consommation_journaliere_kg": 0.15,
+      "esperance_vie_mois": 96,
+      "maturite_sexuelle_mois": 6,
+      "cycle_reproduction": {
+        "oeufs_par_an": 250,
+        "probabilite_eclosion": 0.50
+      },
+      "economie": {
+        "achat_unite": 20,
+        "revente_unite": 10,
+        "attractivite_haute_saison": 2,
+        "attractivite_basse_saison": 1
+      }
+    }
+  ],
+  "infrastructures": {
+    "habitat_tigre": {
+      "prix_achat": 2000,
+      "capacite_max": 2
+    },
+    "habitat_aigle": {
+      "prix_achat": 1000,
+      "capacite_max": 4
+    },
+    "habitat_volaille": {
+      "prix_achat": 300,
+      "capacite_max": 10
+    }
+  },
+  "evenements_aleatoires": [
+    {
+      "type": "Incendie",
+      "probabilite_mensuelle": 0.01,
+      "impact": "Perte d'un habitat aléatoire"
+    },
+    {
+      "type": "Vol d'animal",
+      "probabilite_mensuelle": 0.01,
+      "impact": "Perte d'un individu de haute valeur"
+    },
+    {
+      "type": "Pénurie",
+      "probabilite_mensuelle": 0.02,
+      "impact": "Prix nourriture x2 pour le mois"
+    }
+  ]
+}
