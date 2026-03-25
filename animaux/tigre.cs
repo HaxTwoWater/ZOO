@@ -7,9 +7,11 @@ public class Tigre : Animal
 
     public Tigre(string genre, int ageMois) : base(genre, ageMois) { }
 
-    public int GenererPortee()
+public int GenererPortee()
     {
-        Random rand = new Random();
-        return rand.Next(1, 4); 
+        if (Genre != "Femelle" || AgeMois < MaturiteSexuelleMois || EstMalade) return 0;
+            
+        // Portée entre 1 et 3 petits
+        return new Random().Next(1, 4);
     }
 }
