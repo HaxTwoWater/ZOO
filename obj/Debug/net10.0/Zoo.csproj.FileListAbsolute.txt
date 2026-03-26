@@ -1,0 +1,15 @@
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\bin\Debug\net10.0\Zoo.exe
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\bin\Debug\net10.0\Zoo.deps.json
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\bin\Debug\net10.0\Zoo.runtimeconfig.json
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\bin\Debug\net10.0\Zoo.dll
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\bin\Debug\net10.0\Zoo.pdb
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\obj\Debug\net10.0\Zoo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\obj\Debug\net10.0\Zoo.AssemblyInfoInputs.cache
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\obj\Debug\net10.0\Zoo.AssemblyInfo.cs
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\obj\Debug\net10.0\Zoo.csproj.CoreCompileInputs.cache
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\obj\Debug\net10.0\Zoo.sourcelink.json
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\obj\Debug\net10.0\Zoo.dll
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\obj\Debug\net10.0\refint\Zoo.dll
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\obj\Debug\net10.0\Zoo.pdb
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\obj\Debug\net10.0\Zoo.genruntimeconfig.cache
+C:\Users\haxtw\OneDrive\Bureau\Code\Ecole\Découverte POO\ZOO\obj\Debug\net10.0\ref\Zoo.dll
