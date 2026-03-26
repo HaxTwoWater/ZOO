@@ -1,17 +1,11 @@
-public class Tigre : Animal
+public class Tiger : Animal
 {
-    public override int EsperanceVieMois => 300;
-    public override int MaturiteSexuelleMois => 48;
-    public override int DureeGestationMois => 3;
-    public override double ConsommationQuotidienneKg => 12.0;
+    public override int LifeExpectancyMonths => 25 * 12;
+    public override int SexualMaturityMonths => 4 * 12;
+    public override int GestationDurationMonths => 3;
+    public override double DailyFoodConsumptionKg => Gender == "Female" ? 10 : 12;
+    public override string FoodType => "Meat";
 
-    public Tigre(string genre, int ageMois) : base(genre, ageMois) { }
-
-public int GenererPortee()
-    {
-        if (Genre != "Femelle" || AgeMois < MaturiteSexuelleMois || EstMalade) return 0;
-            
-        // Portée entre 1 et 3 petits
-        return new Random().Next(1, 4);
-    }
+    public Tiger(string gender, int ageInMonths)
+        : base("Tiger", gender, ageInMonths) { }
 }

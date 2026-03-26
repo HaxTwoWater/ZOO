@@ -1,67 +1,55 @@
-using System;
-
 public abstract class Animal
 {
-    // Propriétés communes
-    public string Genre { get; set; } // "Mâle" ou "Femelle"
-    public int AgeMois { get; set; }
-    public double Faim { get; set; } // 0 = Repu, 100 = Affamé
-    public bool EstMalade { get; set; }
-    public bool EnGestation { get; set; }
-    public int MoisGestationActuel { get; set; }
+    public string SpeciesName { get; set; }
+    public string Gender { get; set; }
+    public int AgeInMonths { get; set; }
+    public double Hunger { get; set; }
+    public bool IsSick { get; set; }
+    public bool IsPregnant { get; set; }
+    public int CurrentPregnancyMonths { get; set; }
+    public bool CanBreedThisMonth { get; set; }
 
-    // Propriétés spécifiques à l'espèce (définies dans les constructeurs enfants)
-    public abstract int EsperanceVieMois { get; }
-    public abstract int MaturiteSexuelleMois { get; }
-    public abstract int DureeGestationMois { get; }
-    public abstract double ConsommationQuotidienneKg { get; }
+    public abstract int LifeExpectancyMonths { get; }
+    public abstract int SexualMaturityMonths { get; }
+    public abstract int GestationDurationMonths { get; }
+    public abstract double DailyFoodConsumptionKg { get; }
+    public abstract string FoodType { get; }
 
-    public Animal(string genre, int ageMois)
+    public Animal(string speciesName, string gender, int ageInMonths)
     {
-        Genre = genre;
-        AgeMois = ageMois;
-        Faim = 0;
-        EstMalade = false;
+        SpeciesName = speciesName;
+        Gender = gender;
+        AgeInMonths = ageInMonths;
+        Hunger = 0;
+        IsSick = false;
+        IsPregnant = false;
+        CurrentPregnancyMonths = 0;
+        CanBreedThisMonth = true;
     }
 
-    // Logique de nutrition (basée sur 30 jours par mois)
-    public virtual double Manger(double quantiteDisponible)
+    public virtual void AgeUp()
     {
-        double besoinMensuel = ConsommationQuotidienneKg * 30;
-        
-        if (quantiteDisponible >= besoinMensuel)
+        AgeInMonths++;
+
+        if (IsPregnant)
         {
-            Faim = 0;
-            return besoinMensuel;
-        }
-        else
-        {
-            Faim += 50; // La faim augmente si le stock est insuffisant
-            return quantiteDisponible;
+            CurrentPregnancyMonths++;
         }
     }
 
-    public void Vieillir()
+    public virtual bool IsAlive()
     {
-        AgeMois++;
-        if (EnGestation)
-        {
-            MoisGestationActuel++;
-        }
-    }
-
-    public bool PeutSeReproduire()
-    {
-        return AgeMois >= MaturiteSexuelleMois 
-               && !EstMalade 
-               && Faim < 50 
-               && !EnGestation;
-    }
-
-    public bool EstVivant()
-    {
-        if (AgeMois >= EsperanceVieMois) return false;
-        if (EstMalade && Faim > 80) return false;
+        if (AgeInMonths >= LifeExpectancyMonths) return false;
+        if (Hunger >= 100) return false;
         return true;
+    }
+
+    public virtual bool CanBreed()
+    {
+        return AgeInMonths >= SexualMaturityMonths
+               && !IsSick
+               && Hunger < 50
+               && !IsPregnant
+               && CanBreedThisMonth;
     }
 }

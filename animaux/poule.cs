@@ -1,26 +1,11 @@
-public class Poule : Animal
+public class Chicken : Animal
 {
-    public override int EsperanceVieMois => 96;
-    public override int MaturiteSexuelleMois => 6;
-    public override double ConsoQuotidienneKg => 0.15;
-    public override string TypeAliment => "Graines";
+    public override int LifeExpectancyMonths => 8 * 12;
+    public override int SexualMaturityMonths => 6;
+    public override int GestationDurationMonths => 2;
+    public override double DailyFoodConsumptionKg => Gender == "Female" ? 0.15 : 0.18;
+    public override string FoodType => "Seeds";
 
-    public Poule(string genre, int ageMois) : base(genre, ageMois) { }
-
-    public int CalculerEclosionsMensuelles()
-    {
-        if (Genre != "Femelle" || AgeMois < MaturiteSexuelleMois) return 0;
-
-        // 250 oeufs / 12 mois = ~20 oeufs par mois
-        int oeufsPondus = 20; 
-        int poussins = 0;
-        Random rand = new Random();
-
-        for (int i = 0; i < oeufsPondus; i++)
-        {
-            // 50% de chance d'éclosion
-            if (rand.NextDouble() < 0.50) poussins++;
-        }
-        return poussins;
-    }
+    public Chicken(string gender, int ageInMonths)
+        : base("Chicken", gender, ageInMonths) { }
 }
